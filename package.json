@@ -1,0 +1,29 @@
+{
+  "name": "project-2-playlists",
+  "version": "1.0.0",
+  "description": "Sam L \r GA SEI Project 2",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Limanski/project-2-playlists.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Limanski/project-2-playlists/issues"
+  },
+  "homepage": "https://github.com/Limanski/project-2-playlists#readme",
+  "dependencies": {
+    "bsync": "0.0.7",
+    "ejs": "^3.0.1",
+    "express": "^4.17.1",
+    "express-session": "^1.17.0",
+    "method-override": "^3.0.0",
+    "mongoose": "^5.8.3"
+  }
+}
