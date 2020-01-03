@@ -5,11 +5,39 @@
     <meta name="viewport" content="width=
 , initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Beatless</title>
 </head>
 <body>
     <header>
         <h1>Edit <%= track.title %></h1>
+        <nav>
+            <ul>
+                <li>
+                    <a href="/">Home</a>
+                </li>
+                <li>
+                    <a href="/tracks">All Tracks</a>
+                </li>
+            </ul>
+        </nav>
     </header>
+    <main>
+        <h2>Track Details:</h2>
+        <form action="/tracks/<%= track._id %>?_method=PUT" method="POST">
+            <select name="artist_id">
+                <% for(let i=0; i<artists.length; i++) { %>
+                    <option value="<%= artists[i]._id %>" 
+                        ></option> }
+            <!-- </select id="artist_id"> <% for (let i= 0; i < artists.length; i++) { %> 
+                <option value=" artists[i]._id %>" <% if(artists[i]._id.toString() === track.artist_id.toString()) { %>
+                    selected
+                    <% } %> 
+            ><% artists[i].name %</option>
+            </select><br/> -->
+            <input type="text" name="title" value="<%= track.title %>"/"><br/>
+            <link name="link"><%= track.link %> </link><br/>
+            <input type="submit" value="Update Track"/>
+        </form>
+    </main>
 </body>
 </html>

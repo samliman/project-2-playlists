@@ -4,11 +4,35 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>New Track Page</title>
+    <title>New Beatless Track</title>
 </head>
 <body>
     <header>
-        <h1>Upload a Track</h1>
+        <h1>Create a Track</h1>
+        <nav>
+            <ul>
+                <li>
+                    <a href="/">Home</a>
+                </li>
+                <li>
+                    <a href="/tracks">All Tracks</a>
+                </li>
+            </ul>
+        </nav>
     </header>
+    <main>
+        <form action="/tracks" method="POST">
+        <label>Artists</label>
+        <select name="artist">
+            <% for (let i = 0; i < artists.length; i++) { %>
+                <option value="<%= artists[i]._id %>"><%=artists[i].name %></option>
+            <% } %>
+        </select><br>
+        <label>Track</label><br>
+        <input type="text" name="title" placeholder="Track Title" /><br>
+        <input type="text" name="link" placeholder="Track Link"/>
+        <input type="submit" value="Create Track"/>
+        </form>
+    </main>
 </body>
 </html>

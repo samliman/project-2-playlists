@@ -1,6 +1,6 @@
 
 const mongoose = require('mongoose');
-const connectionString = 'mongodb://localhost/notBeatport';
+const connectionString = 'mongodb://localhost/Beatless';
 mongoose.connect(connectionString, { 
     useNewUrlParser: true, 
     useUnifiedTopology: true,

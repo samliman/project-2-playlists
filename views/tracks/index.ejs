@@ -4,12 +4,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>notBeatport Tracks</title>
+    <title>Beatless Tracks</title>
 </head>
 <body>
     <header>
         <h1>Tracks</h1>
+        <nav>
+            <ul>
+                <li>
+                    <a href="/">Home</a>
+                </li>
+                <li>
+                    <a href="/tracks/new">Create a New Track</a>
+                </li>
+            </ul>
+        </nav>
     </header>
-    
+    <main>
+        <h2>All Tracks</h2>
+        <ul>
+            <% for (let i = 0; i < tracks.length; i++) { %>
+            <li>
+                <a href="/tracks/<%= tracks[i]._id %>"><%= tracks[i].title%></a>
+            </li>
+            <% } %>
+        </ul>
+    </main>
 </body>
 </html>

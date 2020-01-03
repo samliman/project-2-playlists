@@ -4,11 +4,43 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>notBeatport</title>
+    <title>Beatless</title>
 </head>
 <body>
     <header>
         <h1><%= artist.name %>'s Page</h1>
+        <nav>
+            <ul>
+                <li>
+                    <a href="/">Home</a>
+                </li>
+                <li>
+                    <a href="/artists">All Artists</a>
+                </li>
+            </ul>
+        </nav>
     </header>
+    <main>
+        <h2>Artist Details</h2>
+        <ul>
+            <li><%= artist.name %></li>
+        </ul>
+        <ul>
+            <% for(track in tracks) { %>
+            <li>
+                <a href="/tracks/<%= tracks[track]._id %>"><%= tracks[track].title%></a>
+            </li>
+            <% } %>
+        </ul>
+        <section>
+            <form action="/artists/<%=artist._id %>?_method=DELETE" 
+            method="POST>
+            <input type="submit" value="Delete Artist"/>
+                </form>
+        </section>
+        <section>
+            <a href="/artists/<%=artist._id %>/edit">Edit</a>
+        </section>
+    </main>
 </body>
 </html>

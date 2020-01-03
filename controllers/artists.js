@@ -5,13 +5,14 @@ const express = require('express');
 const router = express.Router();
 
 //MODELS
-const Artist = require('..models/artist');
+const Artist = require('../models/artist');
 const Track = require('../models/track');
 
 //ROUTES
 //New route
 router.get('/new', async (req, res) => {
-    res.render('users/new.ejs');
+    
+    res.render('artists/new.ejs');
 });
 
 //Create route
@@ -25,6 +26,19 @@ router.post('/', async (req,res) => {
     }
 });
 
+//Index Route
+router.get('/', async (req, res) => {
+
+try {
+    const foundArtists = await Artist.find();
+    res.render('artists/index.ejs', {
+        artists: foundArtists
+    });
+    } catch (err) {
+    res.send(err);
+    }
+});
+
 //Show route
 router.get('/:id', async (req, res) =>{
     try {
@@ -32,7 +46,7 @@ router.get('/:id', async (req, res) =>{
         
         const artistsTracks = await Track.find({ artist: foundArtist._id });
 
-        res.render('artist/show.ejs', {
+        res.render('artists/show.ejs', {
             artist:foundArtist,
             tracks: artistsTracks
         });

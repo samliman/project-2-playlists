@@ -4,15 +4,34 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title><%= track.title %> by <%= track.artist.name %></title>
 </head>
 <body>
     <header>
+        <h1><%= track.title %></h1>
+        <nav>
+            <ul>
+                <li>
+                    <a href="/">Home</a>
+                </li>
+                <li> 
+                    <a href="/tracks">All Tracks</a>
+                </li>
+            </ul>
+        </nav>
         <main>
             <section>
-                <!-- <h2>Title: <%= track.title %> </h2>
-                <h3>Artist: <%= artist.name %></h3>
-                <p>track.link%></p> -->
+                <h2>Title: <%= track.title %> </h2>
+                <h3>Artist: <%= track.artist.name %></h3>
+                <p><%= track.link %></p>
+            </section>
+            <section>
+                <form action="/tracks/<%= track._id %>?_method=DELETE" method="POST">
+                <input type="submit" value="Deleted Track"/>
+                </form>
+            </section>
+            <section>
+                <a href="/tracks/<%= track._id %>/edit">Edit</a>
             </section>
         </main>
     </header>
