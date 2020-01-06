@@ -24,9 +24,6 @@
     <main>
         <h2>Artist Details</h2>
         <ul>
-            <li><%= artist.name %></li>
-        </ul>
-        <ul>
             <% for(track in tracks) { %>
             <li>
                 <a href="/tracks/<%= tracks[track]._id %>"><%= tracks[track].title%></a>

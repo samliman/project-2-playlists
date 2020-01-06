@@ -10,31 +10,32 @@
 <body>
     <header>
         <h1><%= track.title %></h1>
-        <nav>
-            <ul>
-                <li>
-                    <a href="/">Home</a>
-                </li>
-                <li> 
-                    <a href="/tracks">All Tracks</a>
-                </li>
-            </ul>
-        </nav>
+    </header>
         <main>
             <section>
-                <h2>Title: <%= track.title %> </h2>
-                <h3>Artist: <%= track.artist.name %></h3>
-                <a href="<%= track.link %>">Play <%= track.title %></a>
+                <h1>Artist: <a href="/artists/<% track.artist._id %>"><%= track.artist.name %></a></h1>
+
+                <a href="<%= track.link %>">Play <%= track.title %></a><br>
+                <a href="<%= track.link %>"><img src="<%= track.image %>"></a>
             </section>
+            <section>
+                <a href="/tracks/<%= track._id %>/edit">Edit track</a>
+            </section>
+            <nav>
+                <ul>
+                    <li>
+                        <a href="/">Home</a>
+                    </li>
+                    <li> 
+                        <a href="/tracks">All Tracks</a>
+                    </li>
+                </ul>
+            </nav>
             <section>
                 <form action="/tracks/<%= track._id %>?_method=DELETE" method="POST">
-                <input type="submit" value="Deleted Track"/>
+                <input type="submit" value="Delete Track"/>
                 </form>
             </section>
-            <section>
-                <a href="/tracks/<%= track._id %>/edit">Edit</a>
-            </section>
         </main>
-    </header>
 </body>
 </html>
