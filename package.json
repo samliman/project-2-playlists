@@ -19,6 +19,8 @@
   },
   "homepage": "https://github.com/Limanski/project-2-playlists#readme",
   "dependencies": {
+    "bcrpyt": "^2.0.0",
+    "bcrypt": "^3.0.7",
     "bsync": "0.0.7",
     "ejs": "^3.0.1",
     "express": "^4.17.1",

@@ -5,12 +5,12 @@ const express = require('express');
 const router = express.Router();
 
 //MODELS
-const Track  = require('../models/track.js');
-const Artist = require ('../models/artist.js');
+const Track  = require('../models/track');
+const Artist = require ('../models/artist');
 
 //ROUTES
 //New Route
-router.get('/new', async (req, res) => {
+router.get('/new',  (req, res) => {
     try {
         const allArtists = await Artist.find();
         res.render('tracks/new.ejs', {
@@ -22,7 +22,7 @@ router.get('/new', async (req, res) => {
 });
 
 //Create
-router.post('/', async (req,res) => {
+router.post('/',  (req,res) => {
     try { 
         await Track.create(req.body);
         res.redirect('/tracks');
@@ -34,11 +34,11 @@ router.post('/', async (req,res) => {
 
 
 //Index
-router.get('/', async (req,res) => {
+router.get('/',  (req,res) => {
     try {
         const foundTracks = await Track.find()
         // .populate('artist');
-        console.log(foundTracks);
+        // console.log(foundTracks);
         res.render('tracks/index.ejs', {
                 tracks:foundTracks
         });
@@ -48,7 +48,7 @@ router.get('/', async (req,res) => {
 });
 
 //Show Route
-router.get('/:id', async (req, res) => {
+router.get('/:id',  (req, res) => {
     try {
     const foundTrack = await Track.findById(req.params.id).populate('artist').exec();
     res.render('tracks/show.ejs', {
@@ -60,7 +60,7 @@ router.get('/:id', async (req, res) => {
 });
 
 //EDIT
-router.get('/:id/edit', async (req, res) => {
+router.get('/:id/edit',  (req, res) => {
     try {
             const foundTrack = await Track.findById(req.params.id);
             const allArtists = await Artist.find();
@@ -71,10 +71,10 @@ router.get('/:id/edit', async (req, res) => {
     } catch (err) {
         res.send(err);
     }
-})
+});
 
 //UPDATE
-router.put('/:id', async (req,res) => {
+router.put('/:id',  (req,res) => {
     try {
         await Track.findByIdAndUpdate(req.params.id, req.body);
         res.rendirect('/tracks/${req.params.id}');
@@ -84,9 +84,9 @@ router.put('/:id', async (req,res) => {
 });
 
 //DELETE ROUTE
-router.delete('/:id', async (req, res) => {
+router.delete('/:id',  (req, res) => {
     try {
-        await Track.findByIdAndRemove (req.params.id);
+        await Track.findByIdAndRemove(req.params.id);
         res.redirect('/tracks');
     } catch (err) {
         res.send (err);

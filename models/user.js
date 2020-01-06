@@ -9,7 +9,7 @@ const userSchema = mongoose.Schema({
 });
 
 //export the Schema as a model
-const User = mongoose.model('User', UserSchema);
+const User = mongoose.model('User', userSchema);
 
 //export the Schema for the controllers
 module.exports = User;

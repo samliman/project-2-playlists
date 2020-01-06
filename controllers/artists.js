@@ -10,8 +10,7 @@ const Track = require('../models/track');
 
 //ROUTES
 //New route
-router.get('/new', async (req, res) => {
-    
+router.get('/new', async (req, res) => {  
     res.render('artists/new.ejs');
 });
 
@@ -49,6 +48,17 @@ router.get('/:id', async (req, res) =>{
         res.render('artists/show.ejs', {
             artist:foundArtist,
             tracks: artistsTracks
+        });
+    } catch (err) {
+        res.send(err);
+    }
+});
+
+router.get('/:id/edit', async (req, res) => {
+    try {
+        const foundArtist = await Artist.findById(req.params.id);
+        res,render('artists/edit.ejs', {
+        artist: foundArtist
         });
     } catch (err) {
         res.send(err);

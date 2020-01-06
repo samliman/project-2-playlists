@@ -70,7 +70,7 @@ router.get('/', async (req, res) => {
 
         await Track.create(tracksToSeed);
         const tracksAndArtists = await Track.find().populate('artist').exec();
-        res.json(trackAndArtists);
+        res.json(tracksAndArtists);
         } catch (err) {
             res.send(err);
         }
