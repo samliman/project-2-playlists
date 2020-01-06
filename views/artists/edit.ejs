@@ -9,25 +9,28 @@
 </head>
 <body>
     <header>
-        <h1>Edit <%= artist.name %>'s Info</h1>
+    <h1>Edit details for <%= artist.name %></h1>
+        <nav>
             <ul>
-                <nav>
                 <li>
                     <a href="/">Home</a>
                 </li>
                 <li>
-                    <a href="/artists">Return to All Artists Page</a>
+                    <a href="/artists">All Artists</a>
                 </li>
             </ul>
         </nav>
     </header>   
     <main>
         <h2>About <%= artist.name %></h2>
-        <form action="/artist/<%= artist._id %>?_method=PUT" method=POST>
+        <form action="/artists/<%= artist._id %>?_method=PUT" method=POST>
             <label>Name</label><br>
             <input type="text" name="name" value="<%= artist.name %>"/><br/>
             <input type="submit" value="Update Artist"/>
         </form>
     </main> 
+    <footer>
+        <a href="/auth/logout/">Logout</a>
+    </footer>
 </body>
 </html>

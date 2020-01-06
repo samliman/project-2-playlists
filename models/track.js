@@ -5,7 +5,7 @@ const trackSchema = mongoose.Schema({
     link: String,
     image: String,
     artist: {type: mongoose.Schema.Types.ObjectId,
-    ref: 'Artist'}
+    ref: 'Artist', required: true}
 })
 
 const Track = mongoose.model ('Track', trackSchema);

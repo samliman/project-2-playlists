@@ -14,14 +14,15 @@
                 <ul>
                     <% if(logged) { %>
                     <li>
+                        <h2>
                         <a href="/artists">Artists</a>
+                        </h2>
                     </li>
                     <li>
+                        <h2>
                         <a href="/tracks">Tracks</a>
+                        </h2>
                     </li>
-                        <li>
-                            <a href="/auth/logout/">Logout</a>
-                        </li>
                         <% } %>
                 </ul>
             </nav>
@@ -43,5 +44,8 @@
                 <button type="submit">Register</button>
             </form>
             <% } %>
+            <footer>
+                    <a href="/auth/logout/">Logout</a>
+            </footer>
         </body>
 </html>

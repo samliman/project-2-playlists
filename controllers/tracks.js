@@ -26,6 +26,22 @@ router.get('/new', async (req, res) => {
     }
 });
 
+//New Route From Artist Show Page
+router.get('/:artistId/new', async (req, res) => {
+    if(req.session.logged = true){
+        try {
+            const artist = await Artist.findById(req.params.artistId);
+            res.render('tracks/newForArtist.ejs', {
+                artist: artist
+            });
+        } catch (err) {
+            res.send(err);
+        }
+    } else {
+        res.send('Please Login before using the site')
+    }
+});
+
 //Create
 router.post('/', async (req,res) => {
     if(req.session.logged = true){
@@ -83,7 +99,7 @@ router.get('/:id/edit', async (req, res) => {
                 const foundTrack = await Track.findById(req.params.id);
                 const allArtists = await Artist.find();
                 res.render('tracks/edit.ejs', {
-                    track: foundTracks,
+                    track: foundTrack,
                     artists: allArtists,
                 });
         } catch (err) {

@@ -39,6 +39,12 @@
         <section>
             <a href="/artists/<%=artist._id %>/edit">Edit</a>
         </section>
+        <section>
+            <a href="/tracks/<%= artist._id %>/new" name="<%= artist.name %>">Create a new Track by <%= artist.name %></a>
+        </section>
     </main>
+    <footer>
+        <a href="/auth/logout/">Logout</a>
+    </footer>
 </body>
 </html>

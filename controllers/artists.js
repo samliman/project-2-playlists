@@ -71,7 +71,7 @@ router.get('/:id/edit', async (req, res) => {
     if(req.session.logged = true){
         try {
                 const foundArtist = await Artist.findById(req.params.id);
-                res,render('artists/edit.ejs', {
+                res.render('artists/edit.ejs', {
                 artist: foundArtist
                 });
             } catch (err) {

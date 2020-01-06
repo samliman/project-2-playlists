@@ -18,7 +18,7 @@ router.post('/login', async (req, res) => {
                 req.session.message = '';
                 req.session.username = foundUser.username;
                 req.session.logged = true;
-            res.redirect('/artists')
+            res.redirect('/')
         } else {
             req.session.message = 'Username or password is incorrect';
             res.redirect('/');
