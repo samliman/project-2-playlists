@@ -4,6 +4,7 @@ const app = express();
 const methodOverride = require('method-override');
 const session = require('express-session');
 require('./db/db');
+const bcrypt = require('bcrypt');
 
 const port = 3000;
 
@@ -31,6 +32,9 @@ app.use('/tracks', tracksController);
 const usersController = require('./controllers/users');
 app.use('/auth', usersController);
 
+const seedController = require('./controllers/seed');
+app.use('/seed', seedController);
+
 
 //Index Route
 app.get ('/', (req, res) => {
@@ -38,6 +42,7 @@ app.get ('/', (req, res) => {
         message: req.session.message,
         logged: req.session.logged
     })
+    // res.render('index.ejs');
 });
 
 //Server

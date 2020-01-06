@@ -1,5 +1,6 @@
 //DEPENDENCIES
 const express = require('express');
+const bcrypt =  require('bcrypt');
 
 // CLASSES
 const router = express.Router();
@@ -43,6 +44,7 @@ const artistsToSeed = [
 ];
 
 //ROUTES
+//Seed Index
 router.get('/', async (req, res) => {
     try {
 // seed CREATE route and CLEAR EXISTING DATA
@@ -54,23 +56,28 @@ router.get('/', async (req, res) => {
             {
                 title: 'Daughter',
                 link: 'https://www.youtube.com/watch?v=oucTu-2SmZs',
+                image: 'https://i.scdn.co/image/f96458025a0640bf1d3c8f764a42ec21d4db1eae',
                 artist: newArtists[8]._id
             },
         {
             title: 'Drugs (feat Rosie Lowe)',
             link: 'https://www.youtube.com/watch?v=K3Gk8Ku662A',
+            image: 'https://i1.sndcdn.com/artworks-000174845332-zhu5an-t500x500.jpg',
             artist: newArtists[1]._id
         },
             {
-                title: 'Stop The Killing',
-                link: 'https://www.youtube.com/watch?time_continue=37&v=uxoZZIk0wqY&feature=emb_title',
+                title: 'Away From Keyboard',
+                link: 'https://www.youtube.com/watch?v=pSC2EPDKGCQ',
+                image: 'https://i1.sndcdn.com/artworks-000191915927-7jtpm9-t500x500.jpg',
                 artist: newArtists[4]._id
             }
         ]
 
         await Track.create(tracksToSeed);
         const tracksAndArtists = await Track.find().populate('artist').exec();
+
         res.json(tracksAndArtists);
+
         } catch (err) {
             res.send(err);
         }
