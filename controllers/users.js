@@ -33,7 +33,7 @@ router.post('/login', async (req, res) => {
 });
 
 //Register Create Route
-router.post('/registration',  (req, res) => {
+router.post('/registration', async (req, res) => {
     //Hash found password and store as a variable
     const passwordHash = bcrypt.hashSync(req.body.password, bcrypt.genSaltSync(10))
     
