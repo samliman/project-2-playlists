@@ -17,10 +17,25 @@
                     <li>
                         <a href="/tracks">Tracks</a>
                     </li>
-                   
+                   <% if(logged) { %>
                 </ul>
             </nav>
         </header>
-<%# ADD LOGIN AND SESSION HERE %>
-    </body>
+        <%= message %>
+        <% if(!logged) { %> 
+            <h4>Login</h4>
+            <form action="/auth/login" method="POST">
+            <input type="text" name="username" placeholder="username"><br>
+            <input type="password" name="password" placeholder="password"><br>
+            <button type="submit">Login</button>
+            </form>
+
+            <h4>Regiustration</h4>
+            <form action="/auth/login" method="POST">
+                <input type="text" name="username" placeholder="username"><br>
+                <input type="password" name="password" placeholder="password"><br>
+                <button type="submit">Register</button>
+            </form>
+            <% } %>
+        </body>
 </html>
