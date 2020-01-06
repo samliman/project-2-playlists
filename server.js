@@ -28,11 +28,16 @@ app.use('/artists', artistsController);
 const tracksController = require('./controllers/tracks.js');
 app.use('/tracks', tracksController);
 
+const usersController = require('./controllers/users');
+app.use('/auth', usersController);
 
+
+//Index Route
 app.get ('/', (req, res) => {
     res.render('index.ejs');
 });
 
+//Server
 app.listen(port, () => {
     console.log(`listening on port ${port}`);
 });
