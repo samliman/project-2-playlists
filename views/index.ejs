@@ -9,20 +9,22 @@
 </head>
     <body>
         <header>
-        <h1>Welcome to Beatless!</h1>
+        <h1 class ="jumbotron text-center">Welcome to Beatless!</h1>
             <nav>
                 <ul>
                     <% if(logged) { %>
-                    <li>
-                        <h2>
-                        <a href="/artists">Artists</a>
-                        </h2>
-                    </li>
-                    <li>
-                        <h2>
-                        <a href="/tracks">Tracks</a>
-                        </h2>
-                    </li>
+                    <p>
+                        <li class="one ofTwo">
+                            <h2 class="text-center">
+                            <a href="/artists">Artists</a>
+                            </h2>
+                        </li>
+                        <li class="two ofTwo">
+                            <h2>
+                            <a href="/tracks">Tracks</a>
+                            </h2>
+                        </li>
+                    </p>
                         <% } %>
                 </ul>
             </nav>

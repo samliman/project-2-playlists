@@ -1,4 +1,5 @@
 // Dependencies 
+require('dotenv').config();
 const express = require('express');
 const app = express();
 const methodOverride = require('method-override');
@@ -49,3 +50,7 @@ app.get ('/', (req, res) => {
 app.listen(port, () => {
     console.log(`listening on port ${port}`);
 });
+
+app.listen(process.env.PORT, () => {
+    console.log('listening on port 3000');
+  })
