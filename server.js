@@ -47,9 +47,9 @@ app.get ('/', (req, res) => {
 });
 
 //Server
-app.listen(port, () => {
-    console.log(`listening on port ${port}`);
-});
+// app.listen(port, () => {
+//     console.log(`listening on port ${port}`);
+// });
 
 app.listen(process.env.PORT, () => {
     console.log('listening on port 3000');
