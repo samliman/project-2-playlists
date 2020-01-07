@@ -1,28 +1,46 @@
 body {
     background-color: darkred;
     font-family: Arial, Helvetica, sans-serif;
-    color: #f424e3;
-    align-content: center;
-}
-
-.jumbotron h1 {
-    font-weight: 350;
-}
-
-a {
     color: #e3f424;
+    min-height: 100%;
+}
+
+
+
+.container {
+    display: flex;
+    font-weight: 450;
+    background-color: black;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+}
+.space-evenly {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.a {
+    color: #f424e3;
 }
 
 .ofTwo {
-    margin: .5rem!important;
     display: inline-block;
-    font-weight: 400;
-    font-size: 1rem;
-    
-
+    font-weight: 450;
+    font-size: 1 rem;
+    background-color: black;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 8px;
 }
 
+.li {
+    margin-bottom: 0px;
+}
 
 img {
     max-width: 300px;
+}
+
+footer {
+   text-align: center;
 }
