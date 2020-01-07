@@ -33,14 +33,11 @@ body {
     padding-top: 8px;
 }
 
-.li {
-    margin-bottom: 0px;
-}
-
 img {
     max-width: 300px;
 }
 
 footer {
-   text-align: center;
+    text-align: center;
+    padding-top: 150px;
 }

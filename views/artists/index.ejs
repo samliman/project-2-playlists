@@ -9,28 +9,27 @@
     <link rel="stylesheet" href="/css/main.css">
 </head>
 <body>
-    <header>
-        <h1 class="text-center">Artists</h1>
+    <header class="text-center">
+        <h1>Artists</h1>
         <nav>
-            <ul>
-                <li>
-                    <a href="/">Home</a>
-                </li>
-                <li>
-                    <a href="/artists/new">Create a New Artist</a>
-                </li>
-            </ul>
+            <div>
+                <a href="/">Home</a>
+            </div>
+            <div>
+                <a href="/artists/new">Create a New Artist</a>
+            </div>
         </nav>
-    </header>
+    </header class="text-center">
+    <br>        
     <main>
-        <h2>All Artists:</h2>
-        <ul>
+        <h2 class="text-center">All Artists:</h2>
+        <div class="row-wrap text-center">
             <% for(let i = 0; i < artists.length; i++) { %>
-            <li>
+                <nav class="wrap">
                 <a href="/artists/<%=artists[i]._id%>"><%= artists[i].name%></a>
-            </li>
+            </nav>
         <% } %>
-        </ul>
+        </div>
     </main>
     <footer>
         <a href="/auth/logout/">Logout</a>

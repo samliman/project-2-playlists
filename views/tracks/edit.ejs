@@ -11,35 +11,35 @@
 </head>
 <body>
     <header>
-    <h1>Edit details for <%= track.title %></h1>
+    <h1 class="text-center">Edit details for <%= track.title %></h1>
         <nav>
-            <ul>
-                <li>
+            <ul class="text-center">
+                <div>
                     <a href="/">Home</a>
-                </li>
-                <li>
+                </div>
+                <div>
                     <a href="/tracks">All Tracks</a>
-                </li>
+                </div>
             </ul>
         </nav>
     </header>
-    <main>
+    <main class="text-center">
         <h2>Track Details:</h2>
         <form action="/tracks/<%= track._id %>?_method=PUT" method="POST">
-            <label>Artists</label><br>
+            <label >Artists</label><br>
             <select name="artist">
                 <% for(let i = 0; i < artists.length; i++) { %>
                     <option value="<%= artists[i]._id %>" 
                         <% if(artists[i]._id.toString() === track.artist._id.toString()) { %>
                         selected
                         <% } %>
-            ><%= artists[i].name %></option>
+                        STYLE="color: aliceblue; background-color: black;"><%= artists[i].name %></option>
             <% } %>
             </select><br/>
             <label>Title</label><br>
-            <input type="text" name="title" value="<%= track.title %>"/><br/>
-            <input type="text" name="link" value="<%= track.link %>"/><br>
-            <input type="submit" value="Update Track"/>
+            <input type="text" STYLE="color: aliceblue; background-color: black;" name="title" value="<%= track.title %>"/><br/>
+            <input type="text" STYLE="color: aliceblue; background-color: black;" name="link" value="<%= track.link %>"/><br>
+            <input type="submit" STYLE="color: aliceblue; background-color: black;" value="Update Track"/>
         </form>
     </main>
     <footer>

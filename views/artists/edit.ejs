@@ -10,24 +10,24 @@
 </head>
 <body>
     <header>
-    <h1>Edit details for <%= artist.name %></h1>
+    <h1 class="text-center">Edit details for <%= artist.name %></h1>
         <nav>
             <ul>
-                <li>
+                <div>
                     <a href="/">Home</a>
-                </li>
-                <li>
+                </div>
+                <div>
                     <a href="/artists">All Artists</a>
-                </li>
+                </div>
             </ul>
         </nav>
     </header>   
-    <main>
+    <main class="text-center">
         <h2>About <%= artist.name %></h2>
         <form action="/artists/<%= artist._id %>?_method=PUT" method=POST>
             <label>Name</label><br>
-            <input type="text" name="name" value="<%= artist.name %>"/><br/>
-            <input type="submit" value="Update Artist"/>
+            <input type="text" STYLE="color: aliceblue; background-color: black;" name="name" value="<%= artist.name %>"/><br/>
+            <input type="submit" STYLE="color: aliceblue; background-color: black;" value="Update Artist"/>
         </form>
     </main> 
     <footer>

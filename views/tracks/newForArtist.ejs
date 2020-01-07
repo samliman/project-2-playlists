@@ -10,26 +10,26 @@
 </head>
 <body>
     <header>
-        <h1>Create a Track</h1>
+        <h1 class="text-center">Create a Track</h1>
         <nav>
-            <ul>
-                <li>
+            <ul class="text-center">
+                <div>
                     <a href="/">Home</a>
-                </li>
-                <li>
+                </div>
+                <div>
                     <a href="/tracks">All Tracks</a>
-                </li>
+                </div>
             </ul>
         </nav>
     </header>
-    <main>
+    <main class="text-center">
         <form action="/tracks" method="POST">
         <label>Artist: <%= artist.name %></label><br>
-        <input type="text" name="title" placeholder="Track Title" /><br>
-        <input type="text" name="link" placeholder="Track Link"/>
-        <input type="text"  name="image" placeholder="image link">
-        <input type="hidden" name="artist" value="<%= artist._id %>">
-        <input type="submit" value="Create a new track by <%= artist.name %>"/>
+        <input type="text" STYLE="color: aliceblue; background-color: black;" name="title" placeholder="Track Title" /><br>
+        <input type="text" STYLE="color: aliceblue; background-color: black;" name="link" placeholder="Track Link"/>
+        <input type="text" STYLE="color: aliceblue; background-color: black;"  name="image" placeholder="image link">
+        <input type="hidden" STYLE="color: aliceblue; background-color: black;" name="artist" value="<%= artist._id %>">
+        <input type="submit" STYLE="color: aliceblue; background-color: black;" value="Create a new track by <%= artist.name %>"/>
         </form>
     </main>
     <footer>

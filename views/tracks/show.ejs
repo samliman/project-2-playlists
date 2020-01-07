@@ -9,32 +9,32 @@
     <link rel="stylesheet" href="/css/main.css">
 </head>
 <body>
-    <header>
+    <header class="text-center">
         <h1><%= track.title %></h1>
     </header>
-        <main>
+        <main class="text-center">
             <section>
                 <h1>Artist: <a href="/artists/<%= track.artist._id %>"><%= track.artist.name %></a></h1>
 
                 <a href="<%= track.link %>">Play <%= track.title %></a><br>
                 <a href="<%= track.link %>"><img src="<%= track.image %>"></a>
             </section>
-            <section>
+            <section >
                 <a href="/tracks/<%= track._id %>/edit">Edit track</a>
             </section>
             <nav>
                 <ul>
-                    <li>
+                    <div>
                         <a href="/">Home</a>
-                    </li>
-                    <li> 
+                    </div>
+                    <div> 
                         <a href="/tracks">All Tracks</a>
-                    </li>
+                    </div>
                 </ul>
             </nav>
             <section>
                 <form action="/tracks/<%= track._id %>?_method=DELETE" method="POST">
-                <input type="submit" value="Delete Track"/>
+                <input type="submit" STYLE="color: aliceblue; background-color: black;" value="Delete Track"/>
                 </form>
             </section>
         </main>
