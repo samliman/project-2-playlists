@@ -20,7 +20,7 @@
   "homepage": "https://github.com/Limanski/project-2-playlists#readme",
   "dependencies": {
     "bcrpyt": "^2.0.0",
-    "bcrypt": "^3.0.7",
+    "bcrypt": "^5.0.0",
     "bootstrap": "^4.4.1",
     "bsync": "0.0.7",
     "dotenv": "^8.2.0",
